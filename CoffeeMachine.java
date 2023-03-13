@@ -1,31 +1,47 @@
 import java.util.Scanner;
 
-public class CoffeeMachine {
+public class HomeWork01032023 {
     public static void main(String[] args) {
-        System.out.println("Click: espresso, americano, cappucino, tea: ");
         Scanner scanner = new Scanner(System.in);
-        String drink = scanner.next();
+        System.out.print("Pls choose a drink (0 - espresso, 1 - americano, 2 - capuccino, 3 - tea) : ");
+        int choice = scanner.nextInt();
         scanner.close();
 
-        switch (drink) {
-
-            case "espresso":
-                System.out.println();
+        switch (choice) {
+            case 0:
+                getEspresso();
+                getFinalWords();
                 break;
-            case "espresso + water":
-                System.out.println("americano");
+            case 1:
+                System.out.println("==Making americano==");
+                getEspresso();
+                addSomeWater();
+                getFinalWords();
                 break;
-            case "espresso + frothed milk":
-                System.out.println("cappucino");
+            case 2:
+                System.out.println("==Capuccino==");
+                getEspresso();
+                System.out.println("Adding some milk");
+                getFinalWords();
                 break;
-            case "tea + water":
-                System.out.println("tea");
+            case 3:
+                System.out.println("==Tea==");
+                System.out.println("Choosing a package");
+                addSomeWater();
+                getFinalWords();
                 break;
-
             default:
-                break;
-
+                System.out.println("Wrong number");
         }
+
     }
 
+    public static void getEspresso() {
+        System.out.println("Making espresso");}
+
+    public static void addSomeWater() {
+        System.out.println("Adding some water");}
+
+    public static void getFinalWords() {
+        System.out.println("Your drink is ready");}
 }
